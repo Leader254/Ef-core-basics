@@ -87,7 +87,7 @@ void CreateNewArtistWithNewCover()
 RetrieveAnArtistWithCovers();
 void RetrieveAnArtistWithCovers()
 {
-var artistWithCovers = \_context.Artists
+var artistWithCovers = _context.Artists
 .Include(x => x.Covers)
 .FirstOrDefault(a => a.ArtistId == 1);
 
@@ -116,7 +116,7 @@ Console.WriteLine("Artist not found.");
 RetriveCoverWithArtists();
 void RetriveCoverWithArtists()
 {
-var coverWithArtists = \_context.Covers.Include(c => c.Artists).FirstOrDefault(c => c.CoverId == 1);
+var coverWithArtists = _context.Covers.Include(c => c.Artists).FirstOrDefault(c => c.CoverId == 1);
 if (coverWithArtists != null)
 {
 Console.WriteLine($"Covers : {coverWithArtists.DesignIdea}");
@@ -140,14 +140,14 @@ Console.WriteLine("Covers not found");
 UnAssignAnArtistFromACover();
 void UnAssignAnArtistFromACover()
 {
-var coverwithartist = \_context.Covers
+var coverwithartist = _context.Covers
 .Include(c => c.Artists.Where(a => a.ArtistId == 2))
 .FirstOrDefault(c => c.CoverId == 1);
 //coverwithartist.Artists.RemoveAt(0);
-\_context.Artists.Remove(coverwithartist.Artists[0]);
-\_context.ChangeTracker.DetectChanges();
+_context.Artists.Remove(coverwithartist.Artists[0]);
+_context.ChangeTracker.DetectChanges();
 //var debugview = \_context.ChangeTracker.DebugView.ShortView;
-\_context.SaveChanges();
+_context.SaveChanges();
 }
 
 ```
@@ -160,7 +160,7 @@ ReassignACover();
 
 void ReassignACover()
 {
-var coverwithartist4 = \_context.Covers
+var coverwithartist4 = _context.Covers
 .Include(c => c.Artists.Where(a => a.ArtistId == 4))
 .FirstOrDefault(c => c.CoverId == 5);
 
