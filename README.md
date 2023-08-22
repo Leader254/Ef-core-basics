@@ -1,13 +1,10 @@
 # Many to Many
 
-# 1. Create classes
+## 1. Create classes
 
-## Cover.cs and Artist.cs
-
-```
+### Cover.cs and Artist.cs
 
 ```
-
 namespace PublisherDomain
 {
 public class Cover
@@ -37,7 +34,6 @@ public bool DigitalOnly { get; set; }
 public List<Artist> Artists { get; set; }
 }
 }
-
 ```
 
 ## 1. Create a new project pubcontext
@@ -84,7 +80,6 @@ public DbSet<Cover> Covers { get; set; }
 ## 1.existing-Artist-is given existing cover
 
 ```
-
 ConnectExistingArtistAndCoverObjects();
 void ConnectExistingArtistAndCoverObjects()
 {
@@ -95,13 +90,11 @@ coverA.Artists.Add(artistA);
 coverA.Artists.Add(artistB);
 \_context.SaveChanges();
 }
-
 ```
 
 ## 2.new cover to an existing artist
 
 ```
-
 CreateNewCoverWithExistingArtist();
 void CreateNewCoverWithExistingArtist()
 {
@@ -111,13 +104,11 @@ cover.Artists.Add(artistA);
 \_context.Covers.Add(cover);
 \_context.SaveChanges();
 }
-
 ```
 
 ## 3.new cover + new artist
 
 ```
-
 CreateNewArtistWithNewCover();
 void CreateNewArtistWithNewCover()
 {
@@ -127,13 +118,11 @@ artist.Covers.Add(newCover);
 \_context.Artists.Add(artist);
 \_context.SaveChanges();
 }
-
 ```
 
 ## 4.Retrieve an artist with covers
 
 ```
-
 RetrieveAnArtistWithCovers();
 void RetrieveAnArtistWithCovers()
 {
@@ -156,13 +145,11 @@ else
 Console.WriteLine("Artist not found.");
 }
 }
-
 ```
 
 ## 5.Retrive a cover with its artist
 
 ```
-
 RetriveCoverWithArtists();
 void RetriveCoverWithArtists()
 {
@@ -180,13 +167,11 @@ else
 Console.WriteLine("Covers not found");
 }
 }
-
 ```
 
 ## 6.Unassign an artist from a cover
 
 ```
-
 UnAssignAnArtistFromACover();
 void UnAssignAnArtistFromACover()
 {
@@ -199,13 +184,11 @@ var coverwithartist = \_context.Covers
 //var debugview = \_context.ChangeTracker.DebugView.ShortView;
 \_context.SaveChanges();
 }
-
 ```
 
 ## 7.Reassign cover
 
 ```
-
 ReassignACover();
 
 void ReassignACover()
@@ -220,8 +203,10 @@ var coverwithartist4 = \_context.Covers
     _context.SaveChanges();
 
 }
-
 ```
 
 # End
+
+```
+
 ```
