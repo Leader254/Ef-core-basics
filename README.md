@@ -79,10 +79,11 @@ void CreateNewArtistWithNewCover()
    _context.Artists.Add(artist);
    _context.SaveChanges();
 }
-
-## 4.Retrieve an artist with covers
 ```
 
+## 4.Retrieve an artist with covers
+
+```
 RetrieveAnArtistWithCovers();
 void RetrieveAnArtistWithCovers()
 {
@@ -109,6 +110,7 @@ Console.WriteLine("Artist not found.");
 ```
 
 ## 5.Retrive a cover with its artist
+
 ```
 
 RetriveCoverWithArtists();
@@ -132,6 +134,7 @@ Console.WriteLine("Covers not found");
 ```
 
 ## 6.Unassign an artist from a cover
+
 ```
 
 UnAssignAnArtistFromACover();
@@ -150,6 +153,7 @@ var coverwithartist = \_context.Covers
 ```
 
 ## 7.Reassign cover
+
 ```
 
 ReassignACover();
@@ -169,5 +173,4 @@ var coverwithartist4 = \_context.Covers
 
 ```
 
-
-```
+# End
