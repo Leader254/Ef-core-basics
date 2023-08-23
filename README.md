@@ -4,7 +4,7 @@
 
 ### Cover.cs and Artist.cs
 
-```
+```csharp
 namespace PublisherDomain
 {
 public class Cover
@@ -38,7 +38,7 @@ public List<Artist> Artists { get; set; }
 
 ## 1. Create a new project pubcontext
 
-```
+```csharp
 
 using Microsoft.EntityFrameworkCore;
 using PublisherDomain;
@@ -79,7 +79,7 @@ public DbSet<Cover> Covers { get; set; }
 
 ## 1.existing-Artist-is given existing cover
 
-```
+```csharp
 ConnectExistingArtistAndCoverObjects();
 void ConnectExistingArtistAndCoverObjects()
 {
@@ -94,7 +94,7 @@ coverA.Artists.Add(artistB);
 
 ## 2.new cover to an existing artist
 
-```
+```csharp
 CreateNewCoverWithExistingArtist();
 void CreateNewCoverWithExistingArtist()
 {
@@ -108,7 +108,7 @@ cover.Artists.Add(artistA);
 
 ## 3.new cover + new artist
 
-```
+```csharp
 CreateNewArtistWithNewCover();
 void CreateNewArtistWithNewCover()
 {
@@ -122,7 +122,7 @@ artist.Covers.Add(newCover);
 
 ## 4.Retrieve an artist with covers
 
-```
+```csharp
 RetrieveAnArtistWithCovers();
 void RetrieveAnArtistWithCovers()
 {
@@ -149,7 +149,7 @@ Console.WriteLine("Artist not found.");
 
 ## 5.Retrive a cover with its artist
 
-```
+```csharp
 RetriveCoverWithArtists();
 void RetriveCoverWithArtists()
 {
@@ -171,7 +171,7 @@ Console.WriteLine("Covers not found");
 
 ## 6.Unassign an artist from a cover
 
-```
+```csharp
 UnAssignAnArtistFromACover();
 void UnAssignAnArtistFromACover()
 {
@@ -188,7 +188,7 @@ var coverwithartist = \_context.Covers
 
 ## 7.Reassign cover
 
-```
+```csharp
 ReassignACover();
 
 void ReassignACover()
